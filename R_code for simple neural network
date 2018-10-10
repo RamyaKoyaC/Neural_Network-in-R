@@ -1,0 +1,7 @@
+library(datasets) 
+names(infert)
+library(neuralnet) 
+nn <- neuralnet(
+  case~age+parity+stratum+spontaneous+pooled.stratum, data=infert, hidden=2, err.fct="sse", linear.output=FALSE, likelihood=TRUE)
+nn 
+plot(nn) 
